@@ -77,7 +77,6 @@ fun HomeScreen(
         content = { padding ->
             LazyColumn(modifier = Modifier.padding( padding)
                 .padding(horizontal = 12.dp, vertical = 20.dp)) {
-//                item { Spacer(modifier = Modifier.height(20.dp)) }
                 items(passwords) { password ->
                     PasswordItem(padding,password = password) {
                         onEditPassword(password)

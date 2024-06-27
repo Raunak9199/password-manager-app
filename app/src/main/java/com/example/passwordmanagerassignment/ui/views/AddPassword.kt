@@ -2,6 +2,8 @@ package com.example.passwordmanagerassignment.ui.views
 
 import android.util.Log
 import android.widget.Toast
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -34,6 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.passwordmanagerassignment.data.PasswordEntry
 import com.example.passwordmanagerassignment.utils.EncryptionUtil
+import com.example.passwordmanagerassignment.utils.PasswordGenerator
 import com.example.passwordmanagerassignment.viewmodel.PasswordViewModel
 import kotlinx.coroutines.launch
 
@@ -97,13 +100,6 @@ fun AddPasswordBottomSheet(
             usernameEmail = passwordEntry.usernameEmail
             password = passwordEntry.encryptedPassword
             decryptedPassword = EncryptionUtil.decrypt(passwordEntry.encryptedPassword)
-        }
-    }
-
-    if (showToast) {
-        LaunchedEffect(showToast) {
-            Toast.makeText(context, "Please fill all the fields", Toast.LENGTH_SHORT).show()
-            showToast = false
         }
     }
 
@@ -172,7 +168,25 @@ fun AddPasswordBottomSheet(
                 )
             )
         }
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Row(
+            horizontalArrangement = Arrangement.End
+        ) {
+
+                Text("Generate Random Password", fontSize = 15.sp, color = Color.Black,
+                    fontWeight = FontWeight.W500,
+                    modifier = Modifier
+                        .clickable {
+                            if (decryptedPassword != null) decryptedPassword =
+                                PasswordGenerator.generatePassword(10) else password =
+                                PasswordGenerator.generatePassword(10)
+                        }
+                        .fillMaxWidth()
+                    )
+            }
+//        }
+        Spacer(modifier = Modifier.height(10.dp))
         Row {
             Button(
                 colors = ButtonDefaults.buttonColors(
@@ -193,7 +207,7 @@ fun AddPasswordBottomSheet(
                             onAddPassword(newEntry)
                             Log.d("AddPasswordBottomSheet", "Added New Password Entry: $newEntry")
                         }
-                    }else {
+                    } else {
                         showToast = true
                     }
                 }, modifier = Modifier
@@ -222,6 +236,13 @@ fun AddPasswordBottomSheet(
             }
         }
 
+        if (showToast) {
+            LaunchedEffect(showToast) {
+                Toast.makeText(context, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+                showToast = false
+            }
+        }
     }
 }
+
 

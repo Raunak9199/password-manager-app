@@ -1,6 +1,6 @@
 # password-manager-assignment
 ## Overview
-This Password Manager App is developed using Jetpack Compose and Kotlin. It allows users to securely store, manage, and retrieve their passwords. The app includes features such as adding, editing, and deleting passwords, biometric authentication for security, and encryption/decryption of stored passwords.
+This Password Manager App is developed using Jetpack Compose and Kotlin. It allows users to securely store, manage, and retrieve their passwords. The app includes features such as adding, editing, and deleting passwords, biometric authentication for security, and encryption/decryption of stored passwords along with random string password generation.
 
 ## Features
  - **Add Passwords**: Users can add new password entries.
@@ -8,6 +8,7 @@ This Password Manager App is developed using Jetpack Compose and Kotlin. It allo
  - **Delete Passwords**: Users can delete password entries.
  - **Biometric Authentication**: Users can authenticate using biometric authentication.
  - **Encryption/Decryption**: Passwords are stored in an encrypted format to ensure security.
+ - **Random Password Generator**: Users can generate random but strong 10 digit passwords.
 
 ## Prerequisites
   Android Studio.
@@ -26,12 +27,15 @@ This Password Manager App is developed using Jetpack Compose and Kotlin. It allo
 2. Launch the app folder in Android Studio.
 
    Navigate to the directory where repository is cloned and open it.
-3. Run the Project.
+3. Run the Project. 
+   
+   Clean and rebuild the project first.
 
    Connect the Android device or start an emulator.
 
    Click on the Run button in Android Studio.
 4. Biometric Authentication Setup
+
    If the device supports biometric authentication, ensure it is set up in the device settings.
     
    If not, app will itself asks the user to setup biometric authentication. If hardware doesn't supports biometric auth, it will ask to add a pin/pattern/password.
