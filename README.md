@@ -11,7 +11,9 @@ This Password Manager App is developed using Jetpack Compose and Kotlin. It allo
 
 ## Prerequisites
   Android Studio.
+
   Kotlin 1.9+.
+
   Android device or emulator with biometric hardware.
 
 ## Getting Started
