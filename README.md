@@ -4,31 +4,34 @@ This Password Manager App is developed using Jetpack Compose and Kotlin. It allo
 
 ## Features
  - Add Passwords: Users can add new password entries.
- - Edit Passwords: Users can update existing password entries.
+ - Edit Passwords: Users can update/edit existing password entries.
  - Delete Passwords: Users can delete password entries.
- - Biometric Authentication: Users can authenticate using biometric authentication (fingerprint or facial recognition).
+ - Biometric Authentication: Users can authenticate using biometric authentication.
  - Encryption/Decryption: Passwords are stored in an encrypted format to ensure security.
 
 ## Prerequisites
   Android Studio
   Kotlin 1.9+
-  Android device or emulator with biometric hardware (optional but recommended for biometric authentication)
+  Android device or emulator with biometric hardware
 
 ## Getting Started
 1. Clone the Repository
-   bash
-   Copy code
+   
    git clone https://github.com/yourusername/password-manager-app.git
+
    cd password-manager-app
-2. Open in Android Studio
-   Launch Android Studio.
-   Select Open an existing project.
-   Navigate to the directory where you cloned the repository and open it.
-3. Run the Project
-   Connect your Android device or start an emulator.
-   Click on the Run button in Android Studio or press Shift + F10.
+2. Launch the app folder in Android Studio.
+
+   Navigate to the directory where repository is cloned and open it.
+3. Run the Project.
+
+   Connect the Android device or start an emulator.
+
+   Click on the Run button in Android Studio.
 4. Biometric Authentication Setup
-   If your device supports biometric authentication, ensure it is set up in the device settings.
+   If the device supports biometric authentication, ensure it is set up in the device settings.
+    
+   If not, app will itself asks the user to setup biometric authentication. If hardware doesn't supports biometric auth, it will ask to add a pin/pattern/password.
 
 ## App Structure
  - Main Components
