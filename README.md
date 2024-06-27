@@ -3,11 +3,11 @@
 This Password Manager App is developed using Jetpack Compose and Kotlin. It allows users to securely store, manage, and retrieve their passwords. The app includes features such as adding, editing, and deleting passwords, biometric authentication for security, and encryption/decryption of stored passwords.
 
 ## Features
- - Add Passwords: Users can add new password entries.
- - Edit Passwords: Users can update/edit existing password entries.
- - Delete Passwords: Users can delete password entries.
- - Biometric Authentication: Users can authenticate using biometric authentication.
- - Encryption/Decryption: Passwords are stored in an encrypted format to ensure security.
+ - **Add Passwords**: Users can add new password entries.
+ - **Edit Passwords**: Users can update/edit existing password entries.
+ - **Delete Passwords**: Users can delete password entries.
+ - **Biometric Authentication**: Users can authenticate using biometric authentication.
+ - **Encryption/Decryption**: Passwords are stored in an encrypted format to ensure security.
 
 ## Prerequisites
   Android Studio
@@ -16,10 +16,11 @@ This Password Manager App is developed using Jetpack Compose and Kotlin. It allo
 
 ## Getting Started
 1. Clone the Repository
-   
-   git clone https://github.com/yourusername/password-manager-app.git
 
-   cd password-manager-app
+   ```bash
+    git clone https://github.com/yourusername/password-manager-app.git
+    cd password-manager-app
+
 2. Launch the app folder in Android Studio.
 
    Navigate to the directory where repository is cloned and open it.
