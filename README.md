@@ -1,20 +1,20 @@
 # password-manager-assignment
-##Overview
+## Overview
 This Password Manager App is developed using Jetpack Compose and Kotlin. It allows users to securely store, manage, and retrieve their passwords. The app includes features such as adding, editing, and deleting passwords, biometric authentication for security, and encryption/decryption of stored passwords.
 
-##Features
+## Features
  - Add Passwords: Users can add new password entries.
  - Edit Passwords: Users can update existing password entries.
  - Delete Passwords: Users can delete password entries.
  - Biometric Authentication: Users can authenticate using biometric authentication (fingerprint or facial recognition).
  - Encryption/Decryption: Passwords are stored in an encrypted format to ensure security.
 
-##Prerequisites
+## Prerequisites
   Android Studio
   Kotlin 1.9+
   Android device or emulator with biometric hardware (optional but recommended for biometric authentication)
 
-##Getting Started
+## Getting Started
 1. Clone the Repository
    bash
    Copy code
@@ -30,10 +30,10 @@ This Password Manager App is developed using Jetpack Compose and Kotlin. It allo
 4. Biometric Authentication Setup
    If your device supports biometric authentication, ensure it is set up in the device settings.
 
-App Structure
-Main Components
-MainActivity: The entry point of the app, handles the overall navigation and biometric prompt.
-HomeScreen: Displays the list of saved passwords.
-AddPasswordScreen: Allows users to add or edit a password entry.
-AuthenticationScreen: Handles the biometric authentication prompt.
-BiometricPromptManager: Manages biometric authentication logic.
+## App Structure
+ - Main Components
+ - MainActivity: The entry point of the app, handles the overall navigation and biometric prompt.
+ - HomeScreen: Displays the list of saved passwords.
+ - AddPasswordScreen: Allows users to add or edit a password entry.
+ - AuthenticationScreen: Handles the biometric authentication prompt.
+ - BiometricPromptManager: Manages biometric authentication logic.
