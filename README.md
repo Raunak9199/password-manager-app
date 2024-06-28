@@ -28,6 +28,8 @@ This Password Manager App is developed using Jetpack Compose and Kotlin. It allo
 
    Navigate to the directory where repository is cloned and open it.
 3. Run the Project. 
+
+   Click on Invalidate Caches from the file menu nd select all the 3 options there and then click **invalidate and restart**
    
    Clean and rebuild the project first.
 
