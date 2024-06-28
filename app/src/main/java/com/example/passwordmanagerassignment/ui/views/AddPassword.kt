@@ -11,9 +11,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -29,11 +32,16 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.passwordmanagerassignment.R
 import com.example.passwordmanagerassignment.data.PasswordEntry
 import com.example.passwordmanagerassignment.utils.EncryptionUtil
 import com.example.passwordmanagerassignment.utils.PasswordGenerator
@@ -90,6 +98,8 @@ fun AddPasswordBottomSheet(
     var usernameEmail by remember { mutableStateOf(passwordEntry?.usernameEmail ?: "") }
     var password by remember { mutableStateOf(passwordEntry?.encryptedPassword ?: "") }
     var decryptedPassword by remember { mutableStateOf<String?>(null) }
+
+    var passwordVisible by remember { mutableStateOf(false) }
 
     val context = LocalContext.current
     var showToast by remember { mutableStateOf(false) }
@@ -165,7 +175,19 @@ fun AddPasswordBottomSheet(
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     focusedBorderColor = Color(0xFFCBCBCB),
                     unfocusedBorderColor = Color(0xFFCBCBCB),
-                )
+                ),
+                trailingIcon = {
+                    val image = if (passwordVisible)
+                        ImageVector.vectorResource(id = R.drawable.baseline_visibility_24)
+                    else ImageVector.vectorResource(id = R.drawable.baseline_visibility_off_24)
+
+                    IconButton(onClick = {
+                        passwordVisible = !passwordVisible
+                    }) {
+                        Icon(imageVector = image, contentDescription = if (passwordVisible) "Hide password" else "Show password")
+                    }
+                },
+                visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation()
             )
         }
         Spacer(modifier = Modifier.height(4.dp))
@@ -174,7 +196,7 @@ fun AddPasswordBottomSheet(
             horizontalArrangement = Arrangement.End
         ) {
 
-                Text("Generate Random Password", fontSize = 15.sp, color = Color.Black,
+                Text("Generate Random Password", fontSize = 15.sp, color = Color.Blue.copy(alpha = 0.6F),
                     fontWeight = FontWeight.W500,
                     modifier = Modifier
                         .clickable {
