@@ -1,4 +1,4 @@
-# password-manager-assignment
+# password-manager-app
 ## Overview
 This Password Manager App is developed using Jetpack Compose and Kotlin. It allows users to securely store, manage, and retrieve their passwords. The app includes features such as adding, editing, and deleting passwords, biometric authentication for security, and encryption/decryption of stored passwords along with random string password generation.
 
